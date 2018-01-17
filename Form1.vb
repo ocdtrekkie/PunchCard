@@ -1,6 +1,9 @@
 ﻿Imports Commons.Json
 
 Public Class Form1
+    Dim labelArray(6, 23) As Windows.Forms.Label
+    Dim daysArray(6) As Windows.Forms.Label
+    Dim hoursArray(23) As Windows.Forms.Label
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
 
@@ -32,12 +35,10 @@ Public Class Form1
                         commitsArray(numArray(i)(0), numArray(i)(1)) = numArray(i)(2)
                     Next
 
-                    Dim labelArray(6, 23) As Windows.Forms.Label
                     Dim j, k, l, m, n As Integer
                     For j = 0 To 6
                         For l = 0 To 23
                             labelArray(j, l) = New Windows.Forms.Label
-                            labelArray(j, l).Name = "LabelCommits(" & j & "," & l & ")"
                             labelArray(j, l).Top = 25 * j + 75
                             labelArray(j, l).Left = 25 * l + 80
                             labelArray(j, l).Height = 20
@@ -54,7 +55,6 @@ Public Class Form1
                         Next
                     Next
 
-                    Dim daysArray(6) As Windows.Forms.Label
                     For m = 0 To 6
                         daysArray(m) = New Windows.Forms.Label
                         daysArray(m).Left = 10
@@ -71,7 +71,6 @@ Public Class Form1
                     daysArray(5).Text = "Friday"
                     daysArray(6).Text = "Saturday"
 
-                    Dim hoursArray(23) As Windows.Forms.Label
                     For n = 0 To 23
                         hoursArray(n) = New Windows.Forms.Label
                         hoursArray(n).Left = 25 * n + 80
