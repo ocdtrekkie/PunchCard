@@ -1,3 +1,3 @@
 # GitHub Punch Card Viewer
 
-![Screenshot](Screenshot.jpg)
+![Screenshot](Screenshot.png)
