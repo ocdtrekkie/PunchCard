@@ -16,7 +16,7 @@ Public Class Form1
                 Dim targetURI As New Uri("https://api.github.com/repos/" & txtUsername.Text & "/" & txtRepository.Text & "/stats/punch_card")
                 Dim output As String = ""
                 fr = DirectCast(System.Net.HttpWebRequest.Create(targetURI), System.Net.HttpWebRequest)
-                fr.UserAgent = "ocdtr_vb_test"
+                fr.UserAgent = "PunchCardViewer_VB/1.0"
                 If (fr.GetResponse().ContentLength > 0) Then
                     Dim str As New System.IO.StreamReader(fr.GetResponse().GetResponseStream())
                     output = str.ReadToEnd()
