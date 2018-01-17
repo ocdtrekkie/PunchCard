@@ -33,7 +33,7 @@ Public Class Form1
                     Next
 
                     Dim labelArray(6, 23) As Windows.Forms.Label
-                    Dim j, l, m As Integer
+                    Dim j, k, l, m As Integer
                     For j = 0 To 6
                         For l = 0 To 23
                             labelArray(j, l) = New Windows.Forms.Label
@@ -44,6 +44,11 @@ Public Class Form1
                             labelArray(j, l).Width = 25
                             labelArray(j, l).TextAlign = ContentAlignment.TopRight
                             labelArray(j, l).Text = commitsArray(j, l)
+                            k = Int(Math.Abs(commitsArray(j, l) / mostCommits * 255 - 255))
+                            labelArray(j, l).BackColor = Color.FromArgb(255, k, k, k)
+                            If k < 100 Then
+                                labelArray(j, l).ForeColor = Color.White
+                            End If
                             labelArray(j, l).Visible = True
                             labelArray(j, l).Parent = Me
                         Next
