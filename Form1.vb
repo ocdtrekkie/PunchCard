@@ -33,7 +33,7 @@ Public Class Form1
                     Next
 
                     Dim labelArray(6, 23) As Windows.Forms.Label
-                    Dim j, k, l, m As Integer
+                    Dim j, k, l, m, n As Integer
                     For j = 0 To 6
                         For l = 0 To 23
                             labelArray(j, l) = New Windows.Forms.Label
@@ -57,7 +57,7 @@ Public Class Form1
                     Dim daysArray(6) As Windows.Forms.Label
                     For m = 0 To 6
                         daysArray(m) = New Windows.Forms.Label
-                        daysArray(m).Left = 20
+                        daysArray(m).Left = 10
                         daysArray(m).Top = 25 * m + 75
                         daysArray(m).Height = 20
                         daysArray(m).Visible = True
@@ -70,6 +70,19 @@ Public Class Form1
                     daysArray(4).Text = "Thursday"
                     daysArray(5).Text = "Friday"
                     daysArray(6).Text = "Saturday"
+
+                    Dim hoursArray(23) As Windows.Forms.Label
+                    For n = 0 To 23
+                        hoursArray(n) = New Windows.Forms.Label
+                        hoursArray(n).Left = 25 * n + 80
+                        hoursArray(n).Top = 50
+                        hoursArray(n).Height = 20
+                        hoursArray(n).Width = 25
+                        hoursArray(n).Text = CStr(n + 1)
+                        hoursArray(n).TextAlign = ContentAlignment.TopRight
+                        hoursArray(n).Visible = True
+                        hoursArray(n).Parent = Me
+                    Next
 
                     My.Application.Log.WriteEntry("Most commits on any given hour: " & CStr(mostCommits))
                 End If
