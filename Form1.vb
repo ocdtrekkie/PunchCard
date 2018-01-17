@@ -22,8 +22,13 @@ Public Class Form1
                     Dim numArray As Integer()() = JsonMapper.To(Of Integer()())(output)
                     Dim commitsArray(6, 23) As Integer
 
+                    Dim mostCommits As Integer = 0
+
                     Dim i As Integer
                     For i = 0 To 167
+                        If numArray(i)(2) > mostCommits Then
+                            mostCommits = numArray(i)(2)
+                        End If
                         commitsArray(numArray(i)(0), numArray(i)(1)) = numArray(i)(2)
                     Next
 
@@ -36,7 +41,7 @@ Public Class Form1
                             labelArray(j, l).Top = 25 * j + 75
                             labelArray(j, l).Left = 25 * l + 80
                             labelArray(j, l).Height = 20
-                            labelArray(j, l).Width = 20
+                            labelArray(j, l).Width = 25
                             labelArray(j, l).TextAlign = ContentAlignment.TopRight
                             labelArray(j, l).Text = commitsArray(j, l)
                             labelArray(j, l).Visible = True
@@ -60,6 +65,8 @@ Public Class Form1
                     daysArray(4).Text = "Thursday"
                     daysArray(5).Text = "Friday"
                     daysArray(6).Text = "Saturday"
+
+                    My.Application.Log.WriteEntry("Most commits on any given hour: " & CStr(mostCommits))
                 End If
             Catch ex As System.Net.WebException
                 'Error in accessing the resource, handle it
