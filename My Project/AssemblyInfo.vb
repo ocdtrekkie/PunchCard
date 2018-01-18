@@ -10,9 +10,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("PunchCard")>
 <Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyCompany("Jacob Weisz")>
 <Assembly: AssemblyProduct("PunchCard")>
-<Assembly: AssemblyCopyright("Copyright ©  2018")>
+<Assembly: AssemblyCopyright("Copyright ©  2018 Jacob Weisz")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
